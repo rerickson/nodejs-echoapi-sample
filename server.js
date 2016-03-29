@@ -18,14 +18,6 @@ app.set('view engine', 'html');
 app.use(express.static(__dirname + '/public'));
 app.engine('html', require('ejs').renderFile);
 
-// Helper function to format the strings so that they don't include spaces and are all lowercase 
-var FormatString = function(string)
-{
-  var lowercaseString = string.toLowerCase();
-  var formattedString = lowercaseString.replace(/\s/g,'');
-  return formattedString;
-};
-
 // Handles the route for echo apis
 app.post('/api/echo', function(req, res){
   console.log("received echo request");
